@@ -1,0 +1,1 @@
+# Skupinov-projekt---Palach
