@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Mechaniky</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2f2f2;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 4px;
+            background-color: rgb(39, 39, 39);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        li {
+            float: left;
+            margin-right: 5px;
+            font-size: 90%;
+        }
+
+        li a {
+            display: block;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            margin-right: 10px;
+            color: rgb(200, 200, 200);
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        li:first-child {
+            margin-right: 0px;
+        }
+
+        li:last-child {
+            float: right;
+        }
+
+        li:not(.icon):hover a {
+            background-color: #444;
+            color: white;
+        }
+
+        .content {
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            padding: 30px;
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="icon"><a href="easteregg.html"><img src="icon.png" height="15px"></a></li>
+        <li><a href="projekt_main.html"><strong>Domů</strong></a></li>
+        <li><a href="#mechaniky"><strong>Mechaniky</strong></a></li>
+        <li><a href="projekt_historie.html"><strong>O nás</strong></a></li>
+        <li><a href="pravidla.html"><strong>Pravidla</strong></a></li>
+        <li><a href="kontakty.html"><strong>Kontakty</strong></a></li>
+    </ul>
+
+    <div class="content">
+        <div class="card">
+            <img src="principy.png" alt="Principy">
+        </div>
+        <div class="card">
+            <img src="pohyb.png" alt="Pohyb">
+        </div>
+        <div class="card">
+            <img src="prubeh.png" alt="Průběh">
+        </div>
+    </div>
+</body>
+</html>

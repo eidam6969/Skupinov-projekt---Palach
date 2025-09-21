@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Pravidla</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 4px;
+            background-color: rgb(39, 39, 39);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        li {
+            float: left;
+            margin-right: 5px;
+            font-size: 90%;
+        }
+
+        li a {
+            display: block;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            margin-right: 10px;
+            color: rgb(180, 180, 180);
+            transition: 0.3s;
+            border-radius: 16px;
+        }
+
+        li:first-child {
+            margin-right: 0px;
+        }
+
+        li:not(.icon):hover a {
+            background-color: rgb(161, 161, 161);
+            color: white;
+        }
+
+        li:last-child {
+            float: right;
+        }
+
+        .content {
+            margin-top: 120px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            padding: 30px 50px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .rule {
+            margin-bottom: 20px;
+        }
+
+        .rule strong {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: rgb(39,39,39);
+        }
+
+        .rule span {
+            display: block;
+            color: rgb(90,90,90);
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="icon"><a href="easteregg.html"><img src="icon.png" height="15px"></a></li>
+        <li><a href="projekt_main.html"><strong>Domů</strong></a></li>
+        <li><a href="projekt_mechaniky.html"><strong>Mechaniky</strong></a></li>
+        <li><a href="projekt_historie.html"><strong>O nás</strong></a></li>
+        <li><a href="pravidla.html"><strong>Pravidla</strong></a></li>
+        <li><a href="kontakty.html"><strong>Kontakty</strong></a></li>
+    </ul>
+
+    <div class="content">
+        <div class="card">
+            <h2>Pravidla</h2>
+
+            <div class="rule">
+                <strong>Cíl hry</strong>
+                <span>Hráč musí zničit co nejvíce vesmírných lodí nepřátelské flotily a dosáhnout co nejvyššího skóre.</span>
+            </div>
+
+            <div class="rule">
+                <strong>Ovládání</strong>
+                <span>Pohyb: šipky nebo tahem prstu</span>
+                <span>Střelba: mezerník nebo dotyk obrazovky</span>
+            </div>
+
+            <div class="rule">
+                <strong>Nepřátelské lodě</strong>
+                <span>Nepřátelské lodě se objevují na obrazovce a začnou střílet na hráčovu loď. Hráč musí unikat jejich střelám a zároveň je ničit.</span>
+            </div>
+
+            <div class="rule">
+                <strong>Power‑upy</strong>
+                <span style="color:red">!!! Itemy se můžou stackovat !!!</span>
+                <span>Shield: 7s ochrana před enemy. Ukazatel času v pravém dolním rohu.</span>
+                <span>Rozstřel: na 5s se střely rozdělí na 3 už u lodi.</span>
+                <span>Healy: nestackují se, 1 heal doplní 20% health.</span>
+                <span>Faster shooting: na 5s zrychlí rychlost střelby o 50%. Další stacky přidávají +20%.</span>
+            </div>
+
+            <div class="rule">
+                <strong>Bossové</strong>
+                <span>Po určitém počtu levelů hráč narazí na bosse — silné nepřátelské lodě s vysokým počtem životů a silnými zbraněmi.</span>
+            </div>
+
+            <div class="rule">
+                <strong>Skóre</strong>
+                <span>Hráč dostává body za každou zničenou nepřátelskou loď. Čím více jich zničí, tím vyšší bude jeho skóre.</span>
+            </div>
+
+            <div class="rule">
+                <strong>Konec hry</strong>
+                <span>Hra končí, když hráč ztratí všechny životy. Poté má možnost hru restartovat a zkusit lepší výsledek.</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

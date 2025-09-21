@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Pravidla</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 4px;
+            background-color: rgb(39, 39, 39);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        li {
+            float: left;
+            margin-right: 5px;
+            font-size: 90%;
+        }
+
+        li a {
+            display: block;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            margin-right: 10px;
+            color: rgb(180, 180, 180);
+            transition: 0.3s;
+            border-radius: 16px;
+        }
+
+        li:first-child {
+            margin-right: 0px;
+        }
+
+        li:not(.icon):hover a {
+            background-color: rgb(161, 161, 161);
+            color: white;
+        }
+
+        li:last-child {
+            float: right;
+        }
+
+        .content {
+            margin-top: 120px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            padding: 30px 50px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            margin-bottom: 20px;
+        }
+
+        .contact strong {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: rgb(39,39,39);
+        }
+
+        .contact span {
+            display: block;
+            color: rgb(90,90,90);
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="icon"><a href="easteregg.html"><img src="icon.png" height="15px"></a></li>
+        <li><a href="projekt_main.html"><strong>Domů</strong></a></li>
+        <li><a href="projekt_mechaniky.html"><strong>Mechaniky</strong></a></li>
+        <li><a href="projekt_historie.html"><strong>O nás</strong></a></li>
+        <li><a href="pravidla.html"><strong>Pravidla</strong></a></li>
+        <li><a href="kontakty.html"><strong>Kontakty</strong></a></li>
+    </ul>
+
+    <div class="content">
+        <div class="card">
+            <h2>Kontakty</h2>
+            <div class="contact">
+                <strong>Adam Lipš</strong>
+                <span>✉ lipsa@spskladno.cz</span>
+                <span>📞 666 696 996</span>
+            </div>
+            <div class="contact">
+                <strong>Michal Krupka</strong>
+                <span>✉ krupkam@spskladno.cz</span>
+                <span>📞 961 723 615</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

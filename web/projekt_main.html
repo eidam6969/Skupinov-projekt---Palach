@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Šůtr</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 4px;
+            background-color: rgb(39, 39, 39);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        li {
+            float: left;
+            margin-right: 5px;
+            font-size: 90%;
+        }
+
+        li a {
+            display: block;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            margin-right: 10px;
+            color: rgb(200, 200, 200);
+            transition: 0.3s;
+            border-radius: 16px;
+        }
+
+        li:first-child {
+            margin-right: 0px;
+        }
+
+        li:not(.icon):hover a {
+            background-color: rgb(161, 161, 161);
+            color: white;
+        }
+
+        li:last-child {
+            float: right;
+        }
+
+        .content {
+            margin-top: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            padding: 30px 50px;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .card h1, 
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .resp-img {
+            width: 80%;
+            height: auto;
+            display: block;
+            margin: 20px auto 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="icon"><a href="easteregg.html"><img src="icon.png" height="15px"></a></li>
+        <li><a href="projekt_main.html"><strong>Domů</strong></a></li>
+        <li><a href="projekt_mechaniky.html"><strong>Mechaniky</strong></a></li>
+        <li><a href="projekt_historie.html"><strong>O nás</strong></a></li>
+        <li><a href="pravidla.html"><strong>Pravidla</strong></a></li>
+        <li><a href="kontakty.html"><strong>Kontakty</strong></a></li>
+    </ul>
+
+    <div class="content">
+        <div class="card">
+            <h1>Vítejte na našem webu</h1>
+            <p>Na tomto webu vám chceme ukázat naše týmové schopnosti a znalost v programování. 
+               Chceme předělat hru Space Invaders v jiném programovacím jazyce a nebo celou její grafickou stránku.</p>
+        </div>
+
+        <div class="card">
+            <h2>Proč tato hra</h2>
+            <p>Tuto hru jsme si vybrali kvůli její historii a její jednoduchosti.</p>
+        </div>
+
+        <div class="card">
+            <h2>Historie</h2>
+            <p>Space Invaders byla původně dostupná pouze na hracích automatech, 
+               ale později byly vytvořeny i verze pro konzole a stolní počítače. 
+               Bylo vydáno více než sto oficiálních i neoficiálních různých verzí Space Invaders pro mnoho platforem. 
+               Tomohiro Nishikado se inspiroval filmy Star Wars a War of the Worlds při tvorbě této legendární hry. <br><br>
+               Space Invaders se stala popkulturní ikonou a dodnes má své místo v srdcích hráčů po celém světě. 🚀👾
+            </p>
+            <img src="game_showcase.jpg" class="resp-img">
+        </div>
+    </div>
+</body>
+</html>
