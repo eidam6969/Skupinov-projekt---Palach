@@ -5,7 +5,7 @@ from settings import *
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("img/spaceship.png").convert_alpha()
+        self.image = pygame.image.load("game/img/spaceship.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (100, 100))
         self.rect = self.image.get_rect()
         self.rect.centerx = screen_width // 2
