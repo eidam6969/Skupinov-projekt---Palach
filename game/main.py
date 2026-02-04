@@ -8,9 +8,23 @@ from invader import *
 from bullet import *
 from bullet_invader import *
 
+mydb = mysql.connector.connect(
+    host = HOST,
+    user = USER,
+    password = PASSWORD,
+    database = DATABASE
+)
 
-
-
+def get_highscore_from_db():
+    try:
+        cursor = mydb.cursor()
+        cursor.execute("SELECT MAX(score) FROM Skore_space_invaders")
+        result = cursor.fetchone()
+        cursor.close()
+        return result[0] if result[0] is not None else 0
+    except Exception as e:
+        print(f"Chyba při načítání highscore z DB: {e}")
+        return 0
 
 pygame.init()
 
@@ -28,7 +42,7 @@ user_name = ""
 name_entered = False
 current_enemy_speed = 1
 
-highscore = 
+highscore = get_highscore_from_db()
 
 #inicializace objektu
 player = Player()
@@ -63,9 +77,13 @@ while running:
                 if event.key == pygame.K_RETURN:
                     final_name = user_name.strip() if user_name.strip() else "test"
                     try:
-                        
+                        cursor_db = mydb.cursor()
                         #sql zapis
-                        
+                        sql = "INSERT INTO Skore_space_invaders (jmeno, score) VALUES (%s, %s)"
+                        val = (final_name, score)
+                        cursor_db.execute(sql, val)
+                        mydb.commit()
+                        cursor_db.close()
                         
                         print(f"ULOŽENO DO DB: {final_name} : {score}")
                         name_entered = True
