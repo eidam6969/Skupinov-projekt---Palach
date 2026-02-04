@@ -44,6 +44,16 @@ current_enemy_speed = 1
 
 highscore = get_highscore_from_db()
 
+try:
+    cursor = mydb.cursor()
+    cursor.execute("SELECT MAX(skore) FROM highscores")
+    result = cursor.fetchone()
+    highscore = result[0] if result[0] is not None else 0
+    cursor.close()
+except Exception as e:
+    print(f"Nepodařilo se načíst highscore: {e}")
+    highscore = 0
+
 #inicializace objektu
 player = Player()
 player_group = pygame.sprite.Group(player)
@@ -79,11 +89,22 @@ while running:
                     try:
                         cursor_db = mydb.cursor()
                         #sql zapis
+<<<<<<< HEAD
                         sql = "INSERT INTO Skore_space_invaders (jmeno, score) VALUES (%s, %s)"
                         val = (final_name, score)
                         cursor_db.execute(sql, val)
                         mydb.commit()
                         cursor_db.close()
+=======
+                        cursor = mydb.cursor()
+                        sql = "INSERT INTO highscores (jmeno, skore) VALUES (%s, %s)"
+                        val = (final_name, score)
+                        cursor.execute(sql, val)
+                        mydb.commit() # Důležité pro potvrzení změn v DB
+                        cursor.close()
+                        
+                        
+>>>>>>> a5a28435f4180405ec325eaa0c5f5a82badf6411
                         
                         print(f"ULOŽENO DO DB: {final_name} : {score}")
                         name_entered = True
