@@ -1,7 +1,7 @@
 # Skupinov-projekt---Palach
 
-eidam6969 -- Adam Lipš  
-Mykashy0 --  Michal Krupka  
-tomaskunc08 -- Tomáš Kunc  
-warduck7557 -- Oliver Lažo
+eidam6969 -- Adam Lipš          -vedouci
+Mykashy0 --  Michal Krupka      -programator
+tomaskunc08 -- Tomáš Kunc       -designer
+warduck7557 -- Oliver Lažo      -komentator
 
