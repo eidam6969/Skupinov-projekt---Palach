@@ -1,7 +1,7 @@
 import pygame
 import random
 from settings import *
-
+#load in
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, speed=2):
         super().__init__()
@@ -12,7 +12,7 @@ class Enemy(pygame.sprite.Sprite):
         self.rect.y = random.randint(50, 150)
         self.speed = speed
 
-
+#pohyb ze strany na stranu
     def update(self):
         self.rect.x += self.speed
         if self.rect.right >= screen_width:
@@ -24,7 +24,7 @@ class Enemy(pygame.sprite.Sprite):
             self.speed *= -1
             self.rect.left = 1
             self.rect.y += 40
-
+#mřížové seskupení invaderů
 def create_enemies(rows, cols, x_spacing=50, y_spacing=40, start_x=0, start_y=0, speed=2):
     enemies_group = pygame.sprite.Group()
     for row in range(rows):

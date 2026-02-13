@@ -1,7 +1,7 @@
 import pygame
 from settings import *
 
-
+#načtení postavy hráče
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -11,7 +11,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.centerx = screen_width // 2
         self.rect.bottom = screen_height - 10
         self.speed = 5
-
+#ovládání pohybu hráče
     def update(self, keys):
         if keys[pygame.K_LEFT] and self.rect.left > 0:
             self.rect.x -= self.speed

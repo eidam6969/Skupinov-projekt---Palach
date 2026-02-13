@@ -14,7 +14,7 @@ mydb = mysql.connector.connect(
     password = PASSWORD,
     database = DATABASE
 )
-
+#načtení HIGHSCORE z databáse
 def get_highscore_from_db():
     try:
         cursor = mydb.cursor()
