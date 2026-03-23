@@ -24,6 +24,7 @@ class Enemy(pygame.sprite.Sprite):
             self.speed *= -1
             self.rect.left = 1
             self.rect.y += 40
+            
 #mřížové seskupení invaderů
 def create_enemies(rows, cols, x_spacing=50, y_spacing=40, start_x=0, start_y=0, speed=2):
     enemies_group = pygame.sprite.Group()
