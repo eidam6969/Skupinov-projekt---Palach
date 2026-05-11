@@ -21,7 +21,20 @@ pygame.time.set_timer(INVADER_SHOOT_EVENT, 1200)
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
-
+def create_table_if_not_exists():
+    try:
+        cursor = mydb.cursor()
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Skore_space_invaders (
+                id INT(11) AUTO_INCREMENT PRIMARY KEY,
+                jmeno VARCHAR(15) NOT NULL,
+                score INT NOT NULL
+            )
+        """)
+        mydb.commit()
+        cursor.close()
+    except Exception as e:
+        print(f"Chyba při vytváření tabulky: {e}")
 
 try:
     background = pygame.image.load('menu.png')
@@ -136,6 +149,8 @@ mydb = mysql.connector.connect(
     password = PASSWORD,
     database = DATABASE
 )
+create_table_if_not_exists()
+
 
 def get_highscore_from_db():
     try:
@@ -189,9 +204,18 @@ def start_game():
                         final_name = user_name.strip() if user_name.strip() else "test"
                         try:
                             cursor_db = mydb.cursor()
-                            sql = "INSERT INTO Skore_space_invaders (jmeno, score) VALUES (%s, %s)"
-                            val = (final_name, score)
-                            cursor_db.execute(sql, val)
+
+                            # Zkontroluj, jestli jméno už existuje
+                            cursor_db.execute("SELECT COUNT(*) FROM Skore_space_invaders WHERE jmeno = %s", (final_name,))
+                            count = cursor_db.fetchone()[0]
+
+                            if count > 0:
+                                # Jméno existuje – aktualizuj skóre jen pokud je vyšší
+                                cursor_db.execute("""UPDATE Skore_space_invaders SET score = %s WHERE jmeno = %s AND score < %s""", (score, final_name, score))
+                            else:
+                                # Jméno neexistuje – vlož nový záznam
+                                cursor_db.execute("INSERT INTO Skore_space_invaders (jmeno, score) VALUES (%s, %s)",(final_name, score))
+                            
                             mydb.commit()
                             cursor_db.close()
                             name_entered = True
