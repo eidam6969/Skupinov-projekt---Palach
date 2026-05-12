@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Mechaniky</title>
+    <link rel="stylesheet" href="../static/styles/mechaniky.css">
+</head>
+<body>
+    <ul class="nav">
+    <li class="icon"><img src="{{ url_for('static', filename='images/icon.png') }}" height="15px"></li>
+    <li><a href="{{ url_for('domu') }}"><strong>Domů</strong></a></li> <li><a href="{{ url_for('mechaniky') }}"><strong>Mechaniky</strong></a></li>
+    <li><a href="{{ url_for('o_nas') }}"><strong>O nás</strong></a></li>
+    <li><a href="{{ url_for('pravidla') }}"><strong>Pravidla</strong></a></li>
+
+    {% if session.get('email') %}
+        <li><a href="{{ url_for('tabulka') }}"><strong>Statistika</strong></a></li>
+        <li style="float:right;"><a href="{{ url_for('logout') }}"><strong>Odhlásit se</strong></a></li>
+        <li style="float:right;">
+            <span style="color: white; padding: 14px; display: inline-block;">
+                {{ session['email'] }}
+            </span>
+        </li>
+    {% else %}
+     <li><a href="{{ url_for('login') }}"><strong>Přihlášení</strong></a></li>
+    {% endif %}
+    </ul>
+
+    <div class="content">
+        <div class="cards-grid">
+            <div class="card" onclick="openOverlay('../static/images/principy.png', 'Principy')">
+                <img src="../static/images/principy.png" alt="Principy">
+            </div>
+            <div class="card" onclick="openOverlay('../static/images/pohyb.png', 'Pohyb')">
+                <img src="../static/images/pohyb.png" alt="Pohyb">
+            </div>
+            <div class="card" onclick="openOverlay('../static/images/prubeh.png', 'Průběh')">
+                <img src="../static/images/prubeh.png" alt="Průběh">
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <span class="overlay-close" onclick="closeOverlay()">×</span>
+        <img id="overlay-img" src="" alt="">
+        <h2 id="overlay-title"></h2>
+    </div>
+
+    <script>
+        function openOverlay(src, title) {
+            document.getElementById('overlay-img').src = src;
+            document.getElementById('overlay-title').innerText = title;
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function closeOverlay() {
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        document.getElementById('overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeOverlay();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeOverlay();
+        });
+    </script>
+</body>
+</html>

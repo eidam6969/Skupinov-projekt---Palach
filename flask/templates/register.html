@@ -1,0 +1,40 @@
+<html>
+<head>
+  <link rel="stylesheet" href="../static/styles/register.css">
+</head>
+<body>
+<nav>
+<ul class="nav">
+    <li class="icon"><img src="{{ url_for('static', filename='images/icon.png') }}" height="15px"></li>
+    <li><a href="{{ url_for('domu') }}"><strong>Domů</strong></a></li>
+    <li><a href="{{ url_for('mechaniky') }}"><strong>Mechaniky</strong></a></li>
+    <li><a href="{{ url_for('o_nas') }}"><strong>O nás</strong></a></li>
+    <li><a href="{{ url_for('pravidla') }}"><strong>Pravidla</strong></a></li>
+    <li><a href="{{ url_for('login') }}"><strong>Přihlášení</strong></a></li>
+</ul>
+</nav>
+<div class="content">
+    <div class="login-card">
+        <h1>Registrace</h1>
+        <form method="POST">
+            <div class="input-group">
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Email" name="email" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="jmeno"><b>Jméno</b></label>
+                <input type="text" placeholder="Vaše jméno" name="jmeno" id="jmeno" required>
+            </div>
+
+            <div class="input-group">
+                <label for="psw"><b>Heslo</b></label>
+                <input type="password" placeholder="Heslo" name="psw" id="psw" required>
+            </div>
+
+            <button type="submit" class="login-btn">Registruj se</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

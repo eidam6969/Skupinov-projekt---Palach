@@ -1,0 +1,39 @@
+<html>
+<head>
+  <link rel="stylesheet" href="../static/styles/login.css">
+</head>
+<body>
+<nav>
+<ul class="nav">
+    <li class="icon"><img src="{{ url_for('static', filename='images/icon.png') }}" height="15px"></li>
+    <li><a href="{{ url_for('domu') }}"><strong>Domů</strong></a></li>
+    <li><a href="{{ url_for('mechaniky') }}"><strong>Mechaniky</strong></a></li>
+    <li><a href="{{ url_for('o_nas') }}"><strong>O nás</strong></a></li>
+    <li><a href="{{ url_for('pravidla') }}"><strong>Pravidla</strong></a></li>
+    <li><a href="{{ url_for('register') }}"><strong>Registrace</strong></a></li>
+</ul>
+</nav>
+<div class="content">
+    <div class="login-card">
+        <h2>Přihlášení</h2>
+        <form method="post">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="heslo">Heslo</label>
+                <input type="password" id="heslo" name="psw" placeholder="Zadejte heslo" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Přihláš se</button>
+
+            <div class="login-footer" style="margin-top: 20px; font-size: 0.9rem;">
+                Nemáte ještě účet? <a href="{{ url_for('register') }}" style="color: #272727; font-weight: bold; text-decoration: none;">Zaregistrujte se</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
